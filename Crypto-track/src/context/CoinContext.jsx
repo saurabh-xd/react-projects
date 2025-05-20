@@ -4,7 +4,7 @@ import { createContext, useEffect, useState } from "react";
 
  const CoinContextProvider = (props)=>{
 
-    const [allCoin,setAllcoin] = useState([]);
+    const [allcoin,setAllcoin] = useState([]);
     const [currency, setCurrency] = useState({
         name: "usd",
         symbol: "$"
@@ -21,7 +21,7 @@ import { createContext, useEffect, useState } from "react";
 
 fetch(`https://api.coingecko.com/api/v3/coins/markets?vs_currency=${currency.name}`, options)
   .then(res => res.json())
-  .then(res => setAllcoin(response))
+  .then(res => setAllcoin(res))
   .catch(err => console.error(err));
     }
 
@@ -30,7 +30,7 @@ fetch(`https://api.coingecko.com/api/v3/coins/markets?vs_currency=${currency.nam
     },[currency])
 
     const contextValue={
-            allCoin, currency, setCurrency
+            allcoin, currency, setCurrency
     }
     return (
          <CoinContext.Provider value={contextValue}>
