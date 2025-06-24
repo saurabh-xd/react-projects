@@ -3,6 +3,7 @@ import './Navbar.css'
 import logo from '../../assets/logo.png'
 import arrow_icon from '../../assets/arrow_icon.png'
 import { CoinContext } from '../../context/Coincontext'
+import { Link } from 'react-router-dom'
 
 const Navbar = () => {
 
@@ -31,9 +32,12 @@ const Navbar = () => {
   }
   return (
     <div className='navbar'>
+      <Link to={'/'}>
         <img src={logo} className='logo'/>
+      </Link>
+        
         <ul>
-            <li>Home</li>
+            <Link to={'/'}>Home</Link>
             <li>Features</li>
             <li>pricing</li>
             <li>Blog</li>
