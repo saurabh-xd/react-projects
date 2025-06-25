@@ -1,7 +1,8 @@
 import React, { useContext } from 'react'
-import { AppContext } from '../context/AppContext'
+
 import EntryForm from '../components/EntryForm';
 import EntryCard from '../components/EntryCard';
+import { AppContext } from '../context/appContext';
 
 const Home = () => {
   const {entries} = useContext(AppContext);

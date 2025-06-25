@@ -17,8 +17,13 @@ export const AppProvider = ({ children }) => {
     setEntries([newEntry, ...entries]);
   };
 
+  const deleteEntry = (id) => {
+  setEntries(entries.filter(entry => entry.id !== id));
+};
+
+
   return (
-    <AppContext.Provider value={{ entries, addEntry }}>
+    <AppContext.Provider value={{ entries, addEntry, deleteEntry }}>
       {children}
     </AppContext.Provider>
   );
